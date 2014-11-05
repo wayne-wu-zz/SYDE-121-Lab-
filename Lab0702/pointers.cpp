@@ -50,8 +50,7 @@ int main() {
 	cout << "(format: x y radius, in positive integers.)" <<endl;
 	cin >> new_circle.center_x >> new_circle.center_y >> new_circle.radius;
 	cout << endl;
-	inputCheck(new_circle.radius);
-	} while (inputCheck == false);
+	} while (inputCheck(new_circle.radius) == false);
 	
 	circumference = PI*new_circle.radius*new_circle.radius; 
 	
@@ -66,7 +65,7 @@ int main() {
 
 bool inputCheck(int input){
 	if (input <= 0){
-		cout << "Input must be a positive integer!";
+		cout << "Input must be a positive integer!" <<endl;
 		return false;
 	} else{
 		return true;
