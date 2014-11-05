@@ -2,13 +2,15 @@
 #include <iostream>
 using namespace std;
 
-#define PI = 3.141592653589
+#define PI 3.141592653589
 
 struct Circle{
 	int center_x;
 	int center_y;
 	int radius;
 };
+bool inputCheck (int input);
+
 
 int main() {
 	Circle new_circle;
@@ -19,10 +21,13 @@ int main() {
 	circle_pointer = &new_circle;
 	circumference_pointer = &circumference;
 	
+	do {
 	cout << "Please enter the center point and radius of the circle" <<endl; 
 	cout << "(format: x y radius, in positive integers.)" <<endl;
-	cin << new_circle.center_x << new_circle.center_y << new_circle.radius;
+	cin >> new_circle.center_x >> new_circle.center_y >> new_circle.radius;
 	cout << endl;
+	inputCheck(new_circle.radius);
+	} while (inputCheck == false);
 	
 	circumference = PI*new_circle.radius*new_circle.radius; 
 	
@@ -34,3 +39,13 @@ int main() {
 	
 	return 0;
 }
+
+bool inputCheck(int input){
+	if (input <= 0){
+		cout << "Input must be a positive integer!";
+		return false;
+	} else{
+		return true;
+	}
+}
+
