@@ -2,7 +2,11 @@
 #include <iostream>
 using namespace std;
 
+<<<<<<< HEAD
 #define PI 3.141592653589
+=======
+#define PI  3.141592653589
+>>>>>>> d78f72d114dddc1e0810117d819b98c7e972f489
 
 struct Circle{
 	int center_x;
