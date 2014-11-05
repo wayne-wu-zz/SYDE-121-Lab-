@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-#define PI = 3.141592653589
+#define PI  3.141592653589
 
 struct Circle{
 	int center_x;
@@ -21,7 +21,7 @@ int main() {
 	
 	cout << "Please enter the center point and radius of the circle" <<endl; 
 	cout << "(format: x y radius, in positive integers.)" <<endl;
-	cin << new_circle.center_x << new_circle.center_y << new_circle.radius;
+	cin >> new_circle.center_x >> new_circle.center_y >> new_circle.radius;
 	cout << endl;
 	
 	circumference = PI*new_circle.radius*new_circle.radius; 
