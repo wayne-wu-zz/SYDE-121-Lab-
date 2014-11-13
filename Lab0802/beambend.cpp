@@ -8,20 +8,32 @@ void derivative (double dydx[], double y[], int size, double interval);
 void bending (double moments[], double d2ydx2[], int size);
 
 int main (){
-double y[STEPS] = {0.0};
-double dydx[STEPS] = {0.0};
-double d2ydx2[STEPS] = {0.0};
-double moments[STEPS] = {0.0};
+double y[STEPS+1] = {0.0};
+double dydx[STEPS+1] = {0.0};
+double d2ydx2[STEPS+1] = {0.0};
+double moments[STEPS+1] = {0.0};
 
-deflection(y,STEPS,LENGTH);
-cout << "y at 0 =" << y[0] << endl << "y at 0.1 =" << y[1] <<endl << y[2];
-deflection(y,STEPS,LENGTH/10);
-derivative(dydx,y,STEPS, LENGTH/10);
-cout << "dy(0.01) = " << dydx[0] <<endl;
-derivative(d2ydx2,dydx,STEPS, LENGTH/10);
-cout << "d2y(0.01) = " <<d2ydx2[0] <<endl;
-bending(moments, d2ydx2, STEPS);
-cout << "M(0.01) = " << moments[0] <<endl;
+deflection(y,STEPS+1,LENGTH);
+for (int i = 0; i<11; i++){
+	cout << "y at " << 0.1*i << " = " << y[i] << endl;
+}
+deflection(y,STEPS+1,LENGTH/10);
+for (int i = 0; i<11; i++){
+	cout << "y at " << 0.1*i << " = " << y[i] << endl;
+}
+derivative(dydx,y,STEPS+1, LENGTH/10);
+for (int i = 0; i<11; i++){
+	cout << "dy/dx at " << 0.01*i << " = " << dydx[i] << endl;
+}
+derivative(d2ydx2,dydx,STEPS+1, LENGTH/10);
+for (int i = 0; i<11; i++){
+	cout << "d2y/dx2 at " << 0.01*i << " = " << d2ydx2[i] << endl;
+}
+bending(moments, d2ydx2, STEPS+1);
+for (int i = 0; i<11; i++){
+	cout << "M(x) at " << 0.01*i << " = " << moments[i] << endl;
+}
+
 
 return 0;
 }
