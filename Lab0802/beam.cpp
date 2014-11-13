@@ -1,5 +1,6 @@
 #include "beam.h"
 #include <cmath>
+#include <cstdlib>
 #include <iostream>
 using namespace std;
 
@@ -28,9 +29,9 @@ void deflection (double y[], int size, double interval){
 				n++;
 				cout << "infinite series: " << infinite_series <<endl;
 				difference = infinite_series - previous; 
-			} while (difference > EPSILON); //continues until the difference between two terms are less than epsilon (tolerance) 
+			} while (abs(difference) > EPSILON); //continues until the difference between two terms are less than epsilon (tolerance) 
 		y[i] = constant*infinite_series;
-		cout << "x : " <<x <<endl;
+		cout << "x : " <<x <<endl <<endl;
 		x += d; 
 		 	
 	}	
