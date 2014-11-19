@@ -7,7 +7,7 @@
 // 
 // SYDE 121 Lab: 08 Assignment: 02
 // 
-// Filename: beam.h
+// Filename: beambend.cpp
 // Date submitted: 13/11/14
 // 
 // We hereby declare that this code, submitted 
@@ -22,25 +22,9 @@
 // 
 //*********************************************
 
+This program calculates the deflection and bending moments along a given beam 
 
-#ifndef BEAM_H
-#define BEAM_H
+Instruction: 
 
-#include <cmath>
-using namespace std;
-
-//global constant variables 
-const double ELASTICITY = 200e6; // kiloNewtons / m2 
-const double INERTIA = 8.3e-6; // m4 
-const double LOAD = 100.0;  // kN / m 
-const double LENGTH = 1.0;  // m 
-const double PI = 4.0*atan(1.0); 
-const double EPSILON = 1e-30; // tolerance 
-const int STEPS = 10;
-
-//function declarations 
-void deflection (double y[], int size, double interval);
-void derivative (double dydx[], double y[], int size, double interval);
-void bending (double moments[], double d2ydx2[], int size);
-
-#endif
+Step 1: Compile and Run the Program 
+Step 2: Press any key to dismiss the program 
