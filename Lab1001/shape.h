@@ -5,20 +5,20 @@ enum Shape_Type {SQUARE, DIAMOND, PYRAMID, TRIANGLE};
 
 class Shape{
 	public: 
+		Shape_Type shape_type;
 		int shape_size; 
 		bool isFilled; 
-		SQUARE Square; 
-		DIAMOND Diamond; 
-		PYRAMID Pyramid; 
-		TRIANGLE Triangle; 
-	
-		void defineSize();
-		void defineFill();
+		
+		Shape();
+		Shape(Shape_Type shape_type);	
+		
+		void defineSize(int& shape_size);
+		void defineFill(bool& isFilled);
 		void getSize();
 		void setSize();
-		void printFilledShape();
-		void printHollowShape();  
-		bool getIsFilled (bool isFilled);
+		void printFilledShape(ofstream& out_stream);
+		void printHollowShape(ofstream& out_stream);  
+		void getIsFilled (bool& isFilled);
 };
 
 class Square: public Shape{
@@ -31,7 +31,7 @@ class Square: public Shape{
 
 class Diamond: public Shape{
 	public:
- 		Diamond( void ); // default constructor
+ 		Diamond( DIAMOND ); // default constructor
  		void defineSize();
  		void printFilledShape( ofstream& out_stream );
  		void printHollowShape( ofstream& out_stream ); 
@@ -39,7 +39,7 @@ class Diamond: public Shape{
 
 class Pyramid: public Shape{
 	public:
- 		Pyramid( void ); // default constructor
+ 		Pyramid( PYRAMID ); // default constructor
  		void defineSize();
  		void printFilledShape( ofstream& out_stream );
  		void printHollowShape( ofstream& out_stream ); 
@@ -47,7 +47,7 @@ class Pyramid: public Shape{
 
 class Traingle: public Shape{
 	public:
- 		Triangle( void ); // default constructor
+ 		Triangle( TRIANGLE ); // default constructor
  		void defineSize();
  		void printFilledShape( ofstream& out_stream );
  		void printHollowShape( ofstream& out_stream ); 
