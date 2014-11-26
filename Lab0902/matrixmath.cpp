@@ -10,6 +10,7 @@ struct matrix_struct{
 	int column; 
 	int matrix[100][100];
 };
+
 matrix_struct matrix[2];
 
 void read_file(matrix_struct matrix[]);
@@ -18,9 +19,9 @@ void echoe_input (matrix_struct matrix[]);
 
 int main(){
 
-read_file(matrix);
+	read_file(matrix);
 
-return 0; 
+	return 0; 
 }
 
 void read_file(matrix_struct matrix[]) { 
